@@ -9,5 +9,18 @@
 kuran = User.create(username: "Shmellit", alias: "Shmelly boi", bio: "I like computers")
 dan = User.create(username: "DannyPhan0m", alias: "DanTheMan", bio: "I like shoes")
 clark = User.create(username: "blark", alias: "clarkTHEtreeBark", bio: "I like coding")
+will = User.create(username: "Will", alias: "WillTheDUDE", bio: "I like from software")
 
-mario = Game.create(name: "Mario Galaxy", rating: "5/5")
+switch = Platform.create(name: "Nintendo Switch")
+ps4 = Platform.create(name: "PS4")
+
+mario = Game.create(name: "Mario Galaxy", rating: "E - Everyone", user_id: 1, platform_id: 1)
+bloodborne = Game.create(name: "Bloodborne", rating: "M - Mature", user_id: 4, platform_id: 2)
+bloodborne = Game.create(name: "Bloodborne", rating: "M - Mature", user_id: 1, platform_id: 2)
+
+r1 = Review.create(content: "This game was very fun and unique for a mario game", score: "5/5")
+r2 = Review.create(content: "This game was very fun and unique", score: "10/5")
+
+# switch = Platform.create(name: "Nintendo Switch")
+
+# platformer = Genre.create(name: "Platformer")

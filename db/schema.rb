@@ -10,21 +10,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_11_12_143644) do
+ActiveRecord::Schema.define(version: 2019_11_12_143637) do
 
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.string "rating"
     t.integer "user_id"
     t.integer "platform_id"
-    t.integer "genre_id"
-    t.index ["genre_id"], name: "index_games_on_genre_id"
-    t.index ["platform_id"], name: "index_games_on_platform_id"
-    t.index ["user_id"], name: "index_games_on_user_id"
-  end
-
-  create_table "genres", force: :cascade do |t|
-    t.string "name"
   end
 
   create_table "platforms", force: :cascade do |t|
@@ -34,10 +26,6 @@ ActiveRecord::Schema.define(version: 2019_11_12_143644) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.string "score"
-    t.integer "user_id"
-    t.integer "game_id"
-    t.index ["game_id"], name: "index_reviews_on_game_id"
-    t.index ["user_id"], name: "index_reviews_on_user_id"
   end
 
   create_table "users", force: :cascade do |t|
@@ -46,9 +34,4 @@ ActiveRecord::Schema.define(version: 2019_11_12_143644) do
     t.string "bio"
   end
 
-  add_foreign_key "games", "genres"
-  add_foreign_key "games", "platforms"
-  add_foreign_key "games", "users"
-  add_foreign_key "reviews", "games"
-  add_foreign_key "reviews", "users"
 end
