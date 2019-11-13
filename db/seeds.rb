@@ -8,7 +8,7 @@
 
 kuran = User.create(username: "Shmellit", alias: "Shmelly boi", bio: "I like computers")
 dan = User.create(username: "DannyPhan0m", alias: "DanTheMan", bio: "I like shoes")
-clark = User.create(username: "blark", alias: "clarkTHEtreeBark", bio: "I like coding")
+clark = User.create(username: "Clark9JJ", alias: "clarkTHEtreeBark", bio: "I like coding")
 will = User.create(username: "WillTheDUDE", alias: "Will_the_kill-er", bio: "I like FromSoftware")
 
 switch = Platform.create(name: "Nintendo Switch")

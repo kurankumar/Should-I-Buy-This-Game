@@ -1,10 +1,14 @@
 <h1> Here are all the Users: </h1>
-<h2> ----------------------- </h1>
+<h2> --------------------------------------- </h1>
 <% @users.each do |user| %>
 <ul>
-    <li> <h3> <%= user.username  %> </h3> </li>
-    <li> <%= user.alias  %> </li>
-    <li> <%= user.bio  %> </li>
+    <h2> <%= user.username %>: </h2>
+    <li> <h3> Alias: </h3> <%= user.alias  %> </li>
+    <li> <h3> Bio: </h3> <%= user.bio  %> </li>
+    <li> <h3> Links: </h3> </li>
+    <p> Reviews </p>
+    <p> Games </p> 
 
     </ul>
 <% end %>
+

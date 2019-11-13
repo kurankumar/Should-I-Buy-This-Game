@@ -1,0 +1,10 @@
+<h1> Here are all the Games: </h1>
+<h2> --------------------------------------- </h1>
+<% @games.each do |game| %>
+<ul>
+    <h2> <%= game.name %>: </h2>
+    <li> <h3> Rating: </h3> <%= game.rating  %> </li>
+    <li> <h3> Genre: </h3> <%= game.genre %> </li>
+
+    </ul>
+<% end %>
