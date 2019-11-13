@@ -1,0 +1,16 @@
+<h1>Buy a new game!</h1>
+
+<%= form_for @game, method: :post do |f| %>
+    Name: <%= f.text_field :name %><br /><br />
+    Rating: <%= f.text_field :rating %><br /><br />
+    Genre: <%= f.text_field :genre %><br /><br />
+
+    Who bought it:
+         <%= f.collection_select(:user_id, User.all, :id, :username) %> <br /><br />
+
+    For what platform:
+         <%= f.collection_select(:platform_id, Platform.all, :id, :name) %> <br /><br />
+
+    <br />
+    <%= f.submit %>
+  <% end %>

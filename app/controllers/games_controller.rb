@@ -4,9 +4,12 @@ class GamesController < ApplicationController
   end
 
   def new
+    @game = Game.new
   end
 
   def create
+    @game = Game.create(game_params)
+    redirect_to games_path
   end
 
   def show
@@ -19,5 +22,11 @@ class GamesController < ApplicationController
   end
 
   def destroy
+  end
+
+  private
+
+  def game_params
+    params.require(:game).permit(:name, :rating, :genre, :user_id, :platform_id)
   end
 end

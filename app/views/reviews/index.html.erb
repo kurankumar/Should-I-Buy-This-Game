@@ -1,0 +1,12 @@
+<h1> Here are all the Reviews: </h1>
+<h2> --------------------------------------- </h1>
+<% @reviews.each do |review| %>
+<ul>
+    <h2> Creator: <%= review.user.username %> </h2>
+    <li> <h3> Game: </h3> <%= review.game.name %>  </li> 
+    <li> <h3> Score: </h3> <%= review.score %>  </li> 
+    <li> <h3> Review: </h3> <%= review.content  %> </li><br>
+    
+
+    </ul>
+<% end %>

@@ -1,0 +1,16 @@
+<h1>Review a game!</h1>
+
+<%= form_for @review, method: :post do |f| %>
+
+    What game is being reviewed:
+         <%= f.collection_select(:game_id, Game.all, :id, :name) %> <br /><br />
+    Who's reviewing this game:
+         <%= f.collection_select(:user_id, User.all, :id, :username) %> <br /><br />
+
+
+    Score out of 5 ( #/5 ): <%= f.text_field :score %> <br>
+    Review: <%= f.text_area :content %> <br>
+
+
+<%= f.submit %>
+<% end %>
