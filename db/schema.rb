@@ -15,6 +15,7 @@ ActiveRecord::Schema.define(version: 2019_11_12_143637) do
   create_table "games", force: :cascade do |t|
     t.string "name"
     t.string "rating"
+    t.string "genre"
     t.integer "user_id"
     t.integer "platform_id"
   end
@@ -26,6 +27,8 @@ ActiveRecord::Schema.define(version: 2019_11_12_143637) do
   create_table "reviews", force: :cascade do |t|
     t.text "content"
     t.string "score"
+    t.integer "user_id"
+    t.integer "game_id"
   end
 
   create_table "users", force: :cascade do |t|

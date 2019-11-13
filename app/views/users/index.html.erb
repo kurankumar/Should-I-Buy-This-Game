@@ -1,0 +1,10 @@
+<h1> Here are all the Users: </h1>
+<h2> ----------------------- </h1>
+<% @users.each do |user| %>
+<ul>
+    <li> <h3> <%= user.username  %> </h3> </li>
+    <li> <%= user.alias  %> </li>
+    <li> <%= user.bio  %> </li>
+
+    </ul>
+<% end %>
