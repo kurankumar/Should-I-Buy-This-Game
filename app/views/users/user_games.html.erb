@@ -1,0 +1,14 @@
+
+
+<h1> Here are <%= @user.username %>'s games: </h1>
+
+<%  @user.games.each do |game| %>
+    <h2> <%= game.name %>: </h2>
+     <b> <h3> Rating: </h3> <li> <%= game.rating  %> </li>
+     <h3> Genre: </h3> <li> <%= game.genre %> </li> 
+     <h3> Platform: </h3> <li> <%= game.platform.name %>  </li> 
+      
+<% end %>
+<br>
+
+<h2> <%= link_to "Back", users_path %> </h2>

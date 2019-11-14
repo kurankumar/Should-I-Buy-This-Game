@@ -1,0 +1,12 @@
+<h1> Here are <%= @user.username %>'s Reviews: </h1>
+
+<%  @user.reviews.each do |review| %>
+    <h2> <%= review.game.name %>: </h2>
+     <b> <h3> Platform: </h3> <li> <%= review.game.platform.name %>  </li> 
+     <h3> Content: </h3> <li> <%= review.content %> </li> 
+     <h3> Score: </h3> <li> <%= review.score  %> </li>
+
+<% end %>
+<br>
+
+<h2> <%= link_to "Back", users_path %> </h2>

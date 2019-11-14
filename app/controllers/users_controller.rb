@@ -37,6 +37,14 @@ class UsersController < ApplicationController
     redirect_to users_path
   end
 
+  def user_games
+    @user = User.find_by(:id => params[:user_id])
+  end
+
+  def user_reviews
+    @user = User.find_by(:id => params[:user_id])
+  end
+
   private
 
   def find_user
