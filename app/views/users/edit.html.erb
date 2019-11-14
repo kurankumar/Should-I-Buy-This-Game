@@ -1,0 +1,9 @@
+<h1>Update <%= @user.username %>'s' profile!</h1>
+
+<%= form_for @user, method: :patch do |f| %>
+Username: <%= f.text_field :username %> <br>
+Alias: <%= f.text_field :alias %> <br>
+Bio: <%= f.text_area :bio %> <br>
+<%= f.submit %>
+<h2> <%= link_to "Back", users_path %> </h2>
+<% end %>

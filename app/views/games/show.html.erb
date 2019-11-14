@@ -1,0 +1,22 @@
+<h1> <%= @game.name %> </h1>
+
+<h2>
+  <b>Rating:</b> <%= @game.rating %>
+</h2>
+
+<h2>
+  <b>Genre:</b> <%= @game.genre %>
+</h2>
+
+<h2>
+  <b>Owner:</b> <%= @game.user.username %>
+</h2>
+
+<h2>
+  <b>Platform:</b> <%= @game.platform.name %>
+</h2>
+
+    <h2> <%= link_to "Back", games_path %> </h2>
+    <%= link_to "Edit", edit_game_path(@game) %>
+    <%= button_to "Delete", @game, :method => :delete %>
+

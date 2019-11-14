@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :find_review, only: [:show, :edit, :update, :destroy]
+
   def index
     @reviews = Review.all
   end
@@ -8,8 +10,15 @@ class ReviewsController < ApplicationController
   end
 
   def create
-    @review = Review.create(review_params)
-    redirect_to reviews_path
+    @review = Review.new(review_params)
+
+    if @review.valid?
+      @review.save
+      redirect_to review_path(@review)
+    else
+      flash[:errors] = @review.errors.full_messages
+      redirect_to new_review_path
+    end
   end
 
   def show
@@ -19,12 +28,20 @@ class ReviewsController < ApplicationController
   end
 
   def update
+    @review.update(review_params)
+    redirect_to review_path(@review)
   end
 
   def destroy
+    @review.destroy
+    redirect_to reviews_path
   end
 
   private
+
+  def find_review
+    @review = Review.find_by(:id => params[:id])
+  end
 
   def review_params
     params.require(:review).permit(:content, :score, :user_id, :game_id)

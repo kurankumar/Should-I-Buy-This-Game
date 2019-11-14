@@ -1,5 +1,11 @@
 <h1>Review a game!</h1>
 
+<% if flash[:errors] %>
+  <h3 style='color: red;'>
+    Error: <%= flash[:errors].first %>
+  </h3>
+<% end %>
+
 <%= form_for @review, method: :post do |f| %>
 
     What game is being reviewed:
@@ -9,7 +15,7 @@
 
 
     Score out of 5 ( #/5 ): <%= f.text_field :score %> <br>
-    Review: <%= f.text_area :content %> <br>
+    Content: <%= f.text_area :content %> <br>
 
 
 <%= f.submit %>

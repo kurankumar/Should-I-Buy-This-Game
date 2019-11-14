@@ -1,0 +1,12 @@
+<h1>Edit <%= @review.user.username %>'s' review!</h1>
+
+<%= form_for @review, method: :patch do |f| %>
+    Reviewer: <h2> <%= @review.user.username %> </h2> <br /><br />
+    Game: <h2> <%= @review.game.name %> </h2> <br /><br />
+    Score: <%= f.text_field :score %><br /><br />
+    Content: <%= f.text_area :content %><br /><br />
+    
+
+    <%= f.submit %>
+    <h2> <%= link_to "Back", reviews_path %> </h2>
+  <% end %>

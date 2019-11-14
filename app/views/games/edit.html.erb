@@ -1,12 +1,6 @@
-<h1>Buy a new game!</h1>
+<h1>Edit the info for <%= @game.name %>!</h1>
 
-<% if flash[:errors] %>
-  <h3 style='color: red;'>
-    Error: <%= flash[:errors].first %>
-  </h3>
-<% end %>
-
-<%= form_for @game, method: :post do |f| %>
+<%= form_for @game, method: :patch do |f| %>
     Name: <%= f.text_field :name %><br /><br />
     Rating: <%= f.text_field :rating %><br /><br />
     Genre: <%= f.text_field :genre %><br /><br />
@@ -19,4 +13,5 @@
 
     <br />
     <%= f.submit %>
+    <h2> <%= link_to "Back", games_path %> </h2>
   <% end %>

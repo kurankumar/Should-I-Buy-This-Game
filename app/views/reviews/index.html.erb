@@ -1,11 +1,17 @@
-<h1> Here are all the Reviews: </h1>
+<h1> Here are all of the Reviews: </h1>
 <h2> --------------------------------------- </h1>
+
+<h2> <%= link_to "Create", new_review_path %> </h2>
+
 <% @reviews.each do |review| %>
 <ul>
-    <h2> Creator: <%= review.user.username %> </h2>
+    <h2> Reviewer: <%= review.user.username %> </h2>
     <li> <h3> Game: </h3> <%= review.game.name %>  </li> 
     <li> <h3> Score: </h3> <%= review.score %>  </li> 
     <li> <h3> Review: </h3> <%= review.content  %> </li><br>
+    <li> <%= link_to "Edit", edit_review_path(review) %> </li>
+     <li> <%= link_to "Show", review_path(review) %> </li>
+    <li> <%= button_to "Delete", review, :method => :delete %> </li>
     
 
     </ul>

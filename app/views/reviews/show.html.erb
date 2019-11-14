@@ -1,0 +1,15 @@
+<h1> Reviewer: <%= @review.user.username %> </h1>
+<h1> Game: <%= @review.game.name %> </h1> <br>
+
+
+<h2>
+  <b>Content:</b> <%= @review.content %>
+</h2>
+
+<h2>
+  <b>Score:</b> <%= @review.score %>
+</h2>
+
+<h2> <%= link_to "Back", reviews_path %> </h2>
+<%= link_to "Edit", edit_review_path(@review) %>
+<%= button_to "Delete", @review, :method => :delete %>

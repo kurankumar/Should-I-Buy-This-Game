@@ -1,12 +1,17 @@
-<h1> Here are all the Games: </h1>
+<h1> Here are all of the Games: </h1>
 <h2> --------------------------------------- </h1>
+
+<h2> <%= link_to "Create", new_game_path %> </h2>
+
 <% @games.each do |game| %>
 <ul>
     <h2> <%= game.name %>: </h2>
     <li> <h3> Rating: </h3> <%= game.rating  %> </li>
     <li> <h3> Genre: </h3> <%= game.genre %> </li> 
-    <li> <h3> Owner: </h3> <%= game.user.username %> </li> 
+    <li> <h3> Owner: </h3> <%= link_to game.user.username, user_path(game.user.id) %> </li> 
     <li> <h3> Platform: </h3> <%= game.platform.name %> </li> <br>
+    <%= link_to "Edit", edit_game_path(game) %>
+    <%= button_to "Delete", game, :method => :delete %>
 
     </ul>
 <% end %>

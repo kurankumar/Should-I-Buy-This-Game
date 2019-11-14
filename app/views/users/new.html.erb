@@ -1,5 +1,11 @@
 <h1>Make a new online profile!</h1>
 
+<% if flash[:errors] %>
+  <h3 style='color: red;'>
+    Error: <%= flash[:errors].first %>
+  </h3>
+<% end %>
+
 <%= form_for @user, method: :post do |f| %>
 Username: <%= f.text_field :username %> <br>
 Alias: <%= f.text_field :alias %> <br>

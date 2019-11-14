@@ -1,0 +1,13 @@
+<h1> Username: <%= @user.username %> </h1>
+
+<h2>
+  <b>Alias:</b> <%= @user.alias %>
+</h2>
+
+<h2>
+  <b>Bio:</b> <%= @user.bio %>
+</h2>
+
+<h2> <%= link_to "Back", users_path %> </h2>
+<%= link_to "Edit", edit_user_path(@user) %>
+<%= button_to "Delete", @user, :method => :delete %>
