@@ -1,4 +1,5 @@
 class GamesController < ApplicationController
+  before_action :authorized, except: [:index, :new, :create]
   before_action :find_game, only: [:show, :edit, :update, :destroy]
 
   def index

@@ -4,4 +4,9 @@ Rails.application.routes.draw do
 
   get "/users/user_games/:user_id", to: "users#user_games"
   get "/users/user_reviews/:user_id", to: "users#user_reviews"
+
+  get "/login", to: "sessions#new"
+  post "/login", to: "sessions#create"
+
+  get "/logout", to: "sessions#destroy"
 end

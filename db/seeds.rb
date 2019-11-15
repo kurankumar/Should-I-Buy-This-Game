@@ -6,10 +6,10 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-kuran = User.create(username: "Shmellit", alias: "Shmelly boi", bio: "I like computers")
-dan = User.create(username: "DannyPhan0m", alias: "DanTheMan", bio: "I like shoes")
-clark = User.create(username: "Clark9JJ", alias: "clarkTHEtreeBark", bio: "I like coding")
-will = User.create(username: "WillTheDUDE", alias: "Will_the_kill-er", bio: "I like FromSoftware")
+kuran = User.create(username: "Shmellit", alias: "Shmelly boi", bio: "I like computers", password: "seven7")
+dan = User.create(username: "DannyPhan0m", alias: "DanTheMan", bio: "I like shoes", password: "daboix")
+clark = User.create(username: "Clark9JJ", alias: "clarkTHEtreeBark", bio: "I like coding", password: "password")
+will = User.create(username: "WillTheDUDE", alias: "Will_the_kill-er", bio: "I like FromSoftware", password: "golanguage")
 
 switch = Platform.create(name: "Nintendo Switch")
 ps4 = Platform.create(name: "PS4")

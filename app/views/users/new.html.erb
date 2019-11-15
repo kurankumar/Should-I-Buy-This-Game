@@ -8,7 +8,10 @@
 
 <%= form_for @user, method: :post do |f| %>
 Username: <%= f.text_field :username %> <br>
+Password: <%= f.text_field :password %> <br>
 Alias: <%= f.text_field :alias %> <br>
 Bio: <%= f.text_area :bio %> <br>
 <%= f.submit %>
+
+<h2> <%= link_to "Back", users_path %> </h2>
 <% end %>
